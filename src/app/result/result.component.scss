@@ -10,29 +10,28 @@
     margin-inline-end: 0px;
     font-weight: bold;
   }
-  // button {
-  //   -webkit-appearance: button;
-  //   text-rendering: auto;
-  //   color: -internal-light-dark-color(buttontext, rgb(170, 170, 170));
-  //   letter-spacing: normal;
-  //   word-spacing: normal;
-  //   text-transform: none;
-  //   text-indent: 0px;
-  //   text-shadow: none;
-  //   display: inline-block;
-  //   text-align: center;
-  //   align-items: flex-start;
-  //   cursor: default;
-  //   background-color: -internal-light-dark-color(rgb(239, 239, 239), rgb(74, 74, 74));
-  //   box-sizing: border-box;
-  //   margin: 0em;
-  //   font: 400 13.3333px Arial;
-  //   padding: 1px 6px;
-  //   border-width: 2px;
-  //   border-style: outset;
-  //   border-color: -internal-light-dark-color(rgb(118, 118, 118), rgb(195, 195, 195));
-  //   border-image: initial;
-  // }
+  input {
+    border: none;
+    border-bottom: 1px dotted;
+    outline: none;
+    font-size: 22px;
+  }
+  button {
+    outline: none;
+		display: inline-block;
+		padding: 0.375rem 0.75rem;
+		font-size: 1rem;
+		line-height: 1.5;
+		border-radius: 0.25rem;
+		color: #212529;
+		background-color: #f8f9fa;
+		border-color: #f8f9fa;
+	}
+  .result-time {
+    span {
+      font-size: 22px;
+    }
+  }
 }
 
 #review {

@@ -57,7 +57,7 @@ export class LevelDetailComponent implements OnInit {
 
   onNextQuestion() {
     if (this.currentIndex >= this.QUESTION_NUMBER_PER_LEVEL - 1) {
-      this.router.navigate(['result']);
+      return this.router.navigate(['#result'], { skipLocationChange: true });
     }
     this.currentIndex = this.currentIndex + 1;
     this.question = this.questions[this.currentIndex];

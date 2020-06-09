@@ -1,10 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  OnInit,
-  Output,
-  Input,
-} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -23,7 +17,7 @@ export class QuestionComponent implements OnInit {
 
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnChanges() {
-    setTimeout(() => this.onClickAnswer(''), 1000);
+    setTimeout(() => this.onClickAnswer(''), 5000);
     clearTimeout();
   }
   ngOnInit(): void {}

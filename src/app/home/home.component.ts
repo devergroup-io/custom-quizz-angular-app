@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { IQuestion, DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 const csvToArr = (csv: string) => {
   const allTextLines = csv.split(/\r|\n|\r/);
@@ -48,7 +49,11 @@ const serializeCsvData = (
 export class HomeComponent implements OnInit {
   private csvURL = 'assets/data/data.csv';
   levels = [];
-  constructor(private http: HttpClient, private dataService: DataService) {}
+  constructor(
+    private http: HttpClient,
+    private dataService: DataService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.http.get(this.csvURL, { responseType: 'text' }).subscribe(
@@ -65,5 +70,6 @@ export class HomeComponent implements OnInit {
 
   onClickLevel(level: number) {
     this.dataService.setQuestionsFromHome(level);
+    this.router.navigate([`#level/${level}`], { skipLocationChange: true });
   }
 }
