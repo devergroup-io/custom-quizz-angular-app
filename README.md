@@ -1,5 +1,8 @@
 # To Run The App
 
-> npm install
+```
+ npm install
+
 > npm build
 > docker-compose up -d
+```
