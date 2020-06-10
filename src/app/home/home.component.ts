@@ -70,6 +70,6 @@ export class HomeComponent implements OnInit {
 
   onClickLevel(level: number) {
     this.dataService.setQuestionsFromHome(level);
-    this.router.navigate([`#level/${level}`], { skipLocationChange: true });
+    this.router.navigate([`level/${level}`], { skipLocationChange: true });
   }
 }

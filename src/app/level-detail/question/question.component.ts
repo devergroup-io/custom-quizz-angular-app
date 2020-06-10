@@ -1,4 +1,12 @@
-import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  Input,
+  OnDestroy,
+  OnChanges,
+} from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -6,21 +14,20 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './question.component.html',
   styleUrls: ['./question.component.scss'],
 })
-export class QuestionComponent implements OnInit {
+export class QuestionComponent implements OnChanges {
   // tslint:disable-next-line:no-input-rename
   @Input('question') question: any;
   // tslint:disable-next-line:no-input-rename
   @Input('choices') choices: any;
   @Output() nextQuestion = new EventEmitter();
-
+  timer = null;
   constructor(private dataService: DataService) {}
-
-  // tslint:disable-next-line:use-lifecycle-interface
   ngOnChanges() {
-    setTimeout(() => this.onClickAnswer(''), 5000);
-    clearTimeout();
+    if (this.timer) {
+      clearTimeout(this.timer);
+    }
+    this.timer = setTimeout(() => this.onClickAnswer(''), 5000);
   }
-  ngOnInit(): void {}
 
   onClickAnswer(answer: string) {
     this.nextQuestion.emit();

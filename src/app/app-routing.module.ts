@@ -10,17 +10,17 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: '#level/:id',
+    path: 'level/:id',
     component: LevelDetailComponent,
   },
   {
-    path: '#result',
+    path: 'result',
     component: ResultComponent,
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {useHash: true})],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
